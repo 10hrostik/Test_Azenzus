@@ -17,8 +17,8 @@ abstract public class ChromeDriverInit {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(60,TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
         DriverConstructor.setDriver(driver);
     }
 

@@ -18,7 +18,7 @@ public class Login_Page extends DriverConstructor {
     @FindBy(xpath = "//input[@name='passwordField']")
     private WebElement PassWordBox;
 
-    @FindBy(xpath = "//td[text(),'Login']")
+    @FindBy(xpath = "//div[text() = 'Login']")
     private WebElement EnterBox;
 
     public Login_Page(){
@@ -32,23 +32,17 @@ public class Login_Page extends DriverConstructor {
             LoginBox.sendKeys(login);
             PassWordBox.sendKeys(password);
             EnterBox.click();
-            Thread.sleep(500);
-
-            LoginBox.sendKeys(login);
-            PassWordBox.sendKeys(password);
-            EnterBox.click();
-            if(!driver.findElement(By.xpath("//td[contains(text() , 'Search')]")).isDisplayed()){
-
+            Thread.sleep(1000);
+            if(!driver.findElement((By.xpath("//td[text() = 'Search']"))).isDisplayed()){
                 driver.findElement(By.xpath("//input[@name = 'username']")).sendKeys(login);
-                driver.findElement(By.xpath("//div[@eventproxy = 'isc_LoginWindow_0']//input[@name = 'password']")).sendKeys(password);
-                driver.findElement(By.xpath("//div[@eventproxy = 'isc_LoginWindow_0']//div[contains(text(),'Log in')]")).click();
-           }
+                driver.findElement(By.xpath("//input[@name = 'password']")).sendKeys(password);
+            }
             Thread.sleep(500);
         }catch(InterruptedException e){
             System.out.println(e.getMessage());
         }
         catch(NoSuchElementException e){
-            System.out.println(e.getMessage());
+
         }catch(StaleElementReferenceException e){
             System.out.println(e.getMessage());
         }

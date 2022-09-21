@@ -49,7 +49,7 @@ public class SearchTool extends DriverConstructor {
             Thread.sleep(800);
             String findElements = driver.findElement(By.xpath("//div[contains(@eventproxy,'QueryManagerWindowNew_0')]//td[contains(text(),'Found')]")).getText();
             driver.findElement(By.xpath("//div[contains(@eventproxy,'QueryManagerWindowNew_0_cl')]")).click();
-            return findElements;
+            return findElements+" Equpmnets";
         }catch(Exception e){
             System.out.println(e.getMessage());
             return "Not found";
@@ -60,17 +60,17 @@ public class SearchTool extends DriverConstructor {
             driver.findElement(By.xpath("//div[text() = 'Contact']")).click();
             boolean expected[] = {true,true,true,true,true,false,false,false,false};
             Assert.assertArrayEquals(expected,checkIcons("//table[@height='18px']//td[text()='Contact Manager']",
-                    "//div[contains(@eventproxy,'ContactManagerWindowNew_0_max')]",
-                    "//div[contains(@eventproxy,'ContactManagerWindowNew_0_min')]",
-                    "//div[contains(@eventproxy,'ContactManagerWindowNew_0_cl')]",
-                    "//div[contains(@eventproxy,'QueryManagerWindowNew_0')]//input[@name = 'CMSearchText']",
+                    "//div[contains(@eventproxy,'ContactManagerWindow_0_max')]",
+                    "//div[contains(@eventproxy,'ContactManagerWindow_0_min')]",
+                    "//div[contains(@eventproxy,'ContactManagerWindow_0_cl')]",
+                    "//div[contains(@eventproxy,'ContactManagerWindow_0')]//input[@name = 'CMSearchText']",
                     null,null,null,null
             ));
-            driver.findElement(By.xpath("//div[contains(@eventproxy,'ButtonItem_14_button')]//div[text() = 'Search']")).click();
+            driver.findElement(By.xpath("//div[contains(@eventproxy,'CMDynamic')]//div[text()='Search']")).click();
             Thread.sleep(800);
             String findElements = driver.findElement(By.xpath("//td[contains(text(),'record')]")).getText();
-            driver.findElement(By.xpath("//div[contains(@eventproxy,'QueryManagerWindowNew_0_cl')]")).click();
-            return findElements;
+            driver.findElement(By.xpath("//div[contains(@eventproxy,'ContactManagerWindow_0_cl')]")).click();
+            return findElements+" Contacts";
         }catch(Exception e){
             System.out.println(e.getMessage());
             return "Not found";
@@ -91,11 +91,11 @@ public class SearchTool extends DriverConstructor {
                     "//div[contains(@eventproxy,'DocumentManagerSearchWindowNew_0')]//div[text() = 'Layout reset']",
                     "//div[contains(@eventproxy,'DocumentManagerSearchWindowNew_0')]//div[text() = 'Report...']"
             ));
-            driver.findElement(By.xpath("//div[contains(@eventproxy,'DocumentManagerWindowNew_0')]//div[text() = 'Search']")).click();
+            driver.findElement(By.xpath("//div[contains(@eventproxy,'DocumentManagerSearchWindowNew_0')]//div[text() = 'Search']")).click();
             Thread.sleep(800);
             String findElements = driver.findElement(By.xpath("//div[contains(@eventproxy,'DocumentManagerSearchWindowNew_0')]//td[contains(text(),'Found')]")).getText();
             driver.findElement(By.xpath("//div[contains(@eventproxy,'DocumentManagerSearchWindowNew_0_cl')]")).click();
-            return findElements;
+            return findElements+" Documents";
         }catch(Exception e){
             System.out.println(e.getMessage());
             return "Not found";
@@ -103,23 +103,23 @@ public class SearchTool extends DriverConstructor {
     }
     public String aspectCheck(){
         try{
-            driver.findElement(By.xpath("//div[text() = 'Equipment']")).click();
+            driver.findElement(By.xpath("//div[text() = 'Aspect']")).click();
             boolean expected[] = {true,true,true,true,true,true,true,true,true};
-            Assert.assertArrayEquals(expected,checkIcons("//table[@height = '18px']//td[text() = 'Equipment Manager']",
-                    "//div[contains(@eventproxy,'QueryManagerWindowNew_0_max')]",
-                    "//div[contains(@eventproxy,'QueryManagerWindowNew_0_min')]",
-                    "//div[contains(@eventproxy,'QueryManagerWindowNew_0_cl')]",
-                    "//div[contains(@eventproxy,'QueryManagerWindowNew_0')]//input[@name = 'searchTextBox']",
-                    "//div[contains(@eventproxy,'QueryManagerWindowNew_0')]//div[text() = 'Start Editing']",
-                    "//div[contains(@eventproxy,'QueryManagerWindowNew_0')]//div[text() = 'Conditions reset']",
-                    "//div[contains(@eventproxy,'QueryManagerWindowNew_0')]//div[text() = 'Layout reset']",
-                    "//div[contains(@eventproxy,'QueryManagerWindowNew_0')]//div[text() = 'Report...']"
+            Assert.assertArrayEquals(expected,checkIcons("//table[@height = '18px']//td[text() = 'Aspect Manager']",
+                    "//div[contains(@eventproxy,'RecordSearchWindow_0_max')]",
+                    "//div[contains(@eventproxy,'RecordSearchWindow_0_min')]",
+                    "//div[contains(@eventproxy,'RecordSearchWindow_0_cl')]",
+                    "//div[contains(@eventproxy,'RecordSearchWindow_0')]//input[@name = 'searchTextBox']",
+                    "//div[contains(@eventproxy,'RecordSearchWindow_0')]//div[text() = 'Start Editing']",
+                    "//div[contains(@eventproxy,'RecordSearchWindow_0')]//div[text() = 'Conditions reset']",
+                    "//div[contains(@eventproxy,'RecordSearchWindow_0')]//div[text() = 'Layout reset']",
+                    "//div[contains(@eventproxy,'RecordSearchWindow_0')]//div[text() = 'Report...']"
             ));
-            driver.findElement(By.xpath("//div[contains(@eventproxy,'QueryManagerWindowNew_0')]//div[text() = 'Search']")).click();
+            driver.findElement(By.xpath("//div[contains(@eventproxy,'RecordSearchWindow_0')]//div[text() = 'Search']")).click();
             Thread.sleep(800);
-            String findElements = driver.findElement(By.xpath("//div[contains(@eventproxy,'QueryManagerWindowNew_0')]//td[contains(text(),'Found')]")).getText();
-            driver.findElement(By.xpath("//div[contains(@eventproxy,'QueryManagerWindowNew_0_cl')]")).click();
-            return findElements;
+            String findElements = driver.findElement(By.xpath("//div[contains(@eventproxy,'RecordSe')]//td[contains(text(),'Found')]")).getText();
+            driver.findElement(By.xpath("//div[contains(@eventproxy,'RecordSearchWindow_0_cl')]")).click();
+            return findElements+" Aspects";
         }catch(Exception e){
             System.out.println(e.getMessage());
             return "Not found";
@@ -127,23 +127,23 @@ public class SearchTool extends DriverConstructor {
     }
     public String commentCheck(){
         try{
-            driver.findElement(By.xpath("//div[text() = 'Equipment']")).click();
-            boolean expected[] = {true,true,true,true,true,true,true,true,true};
-            Assert.assertArrayEquals(expected,checkIcons("//table[@height = '18px']//td[text() = 'Equipment Manager']",
-                    "//div[contains(@eventproxy,'QueryManagerWindowNew_0_max')]",
-                    "//div[contains(@eventproxy,'QueryManagerWindowNew_0_min')]",
-                    "//div[contains(@eventproxy,'QueryManagerWindowNew_0_cl')]",
-                    "//div[contains(@eventproxy,'QueryManagerWindowNew_0')]//input[@name = 'searchTextBox']",
-                    "//div[contains(@eventproxy,'QueryManagerWindowNew_0')]//div[text() = 'Start Editing']",
-                    "//div[contains(@eventproxy,'QueryManagerWindowNew_0')]//div[text() = 'Conditions reset']",
-                    "//div[contains(@eventproxy,'QueryManagerWindowNew_0')]//div[text() = 'Layout reset']",
-                    "//div[contains(@eventproxy,'QueryManagerWindowNew_0')]//div[text() = 'Report...']"
+            driver.findElement(By.xpath("//div[text() = 'Comment']")).click();
+            boolean expected[] =  {true,true,true,true,true,false,false,true,true};
+            Assert.assertArrayEquals(expected,checkIcons("//table[@height = '18px']//td[text() = 'Comments']",
+                    "//div[contains(@eventproxy,'CommentSearchWindowNew_0_max')]",
+                    "//div[contains(@eventproxy,'CommentSearchWindowNew_0_min')]",
+                    "//div[contains(@eventproxy,'CommentSearchWindowNew_0_cl')]",
+                    "//div[contains(@eventproxy,'CommentSearchWindowNew_0')]//input[@name = 'searchText']",
+                    null,
+                    null,
+                    "//div[contains(@eventproxy,'CommentSearchWindowNew_0')]//div[text() = 'Reset']",
+                    "//div[contains(@eventproxy,'CommentSearchWindowNew_0')]//div[text() = 'Report']"
             ));
-            driver.findElement(By.xpath("//div[contains(@eventproxy,'QueryManagerWindowNew_0')]//div[text() = 'Search']")).click();
+            driver.findElement(By.xpath("//div[contains(@eventproxy,'CommentSearchWindowNew_0')]//div[text() = 'Search']")).click();
             Thread.sleep(800);
-            String findElements = driver.findElement(By.xpath("//div[contains(@eventproxy,'QueryManagerWindowNew_0')]//td[contains(text(),'Found')]")).getText();
-            driver.findElement(By.xpath("//div[contains(@eventproxy,'QueryManagerWindowNew_0_cl')]")).click();
-            return findElements;
+            String findElements = driver.findElement(By.xpath("//td[contains(text(),'row')]")).getText();
+            driver.findElement(By.xpath("//div[contains(@eventproxy,'CommentSearchWindowNew_0_cl')]")).click();
+            return findElements+" Comments";
         }catch(Exception e){
             System.out.println(e.getMessage());
             return "Not found";
@@ -165,11 +165,15 @@ public class SearchTool extends DriverConstructor {
         boolean isChecked[]= new boolean[9];
         try{
             Thread.sleep(200);
-            if(report!=null&&layOutReset!=null&&CondtionRest!=null&&startEditing!=null){
-                if(driver.findElement(By.xpath(startEditing)).isDisplayed()) isChecked[5] =true;
-                if(driver.findElement(By.xpath(CondtionRest)).isDisplayed()) isChecked[6] =true;
+            if(report!=null&&layOutReset!=null){
+
                 if(driver.findElement(By.xpath(layOutReset)).isDisplayed()) isChecked[7] =true;
                 if(driver.findElement(By.xpath(report)).isDisplayed()) isChecked[8] =true;
+
+                if (CondtionRest != null && startEditing !=null) {
+                    if(driver.findElement(By.xpath(startEditing)).isDisplayed()) isChecked[5] =true;
+                    if(driver.findElement(By.xpath(CondtionRest)).isDisplayed()) isChecked[6] =true;
+                }
             }
             if(driver.findElement(By.xpath(lable)).isDisplayed()) isChecked[0] =true;
             if(driver.findElement(By.xpath(maximize)).isDisplayed()) isChecked[1] =true;
@@ -177,9 +181,9 @@ public class SearchTool extends DriverConstructor {
             if(driver.findElement(By.xpath(close)).isDisplayed()) isChecked[3] =true;
             if(driver.findElement(By.xpath(searchBox)).isDisplayed()) isChecked[4] =true;
 
-
             return isChecked;
         }catch(Exception e) {
+
             return isChecked;
         }
     }

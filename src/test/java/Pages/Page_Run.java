@@ -30,6 +30,13 @@ public class Page_Run extends ChromeDriverInit {
 
         searchPage.OpenList();
         list.add(searchPage.docCheck());
+
+        searchPage.OpenList();
+        list.add(searchPage.aspectCheck());
+
+        searchPage.OpenList();
+        list.add(searchPage.commentCheck());
+
         System.out.println(list);
     }
 }
