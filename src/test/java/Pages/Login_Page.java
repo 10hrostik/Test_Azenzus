@@ -36,13 +36,16 @@ public class Login_Page extends DriverConstructor {
             if(!driver.findElement((By.xpath("//td[text() = 'Search']"))).isDisplayed()){
                 driver.findElement(By.xpath("//input[@name = 'username']")).sendKeys(login);
                 driver.findElement(By.xpath("//input[@name = 'password']")).sendKeys(password);
+                driver.findElement(By.xpath("//div[contains(@eventproxy,'LoginWindow')]//div[text()='Log in']")).click();
             }
             Thread.sleep(500);
         }catch(InterruptedException e){
             System.out.println(e.getMessage());
         }
         catch(NoSuchElementException e){
-
+            driver.findElement(By.xpath("//input[@name = 'username']")).sendKeys(login);
+            driver.findElement(By.xpath("//input[@name = 'password']")).sendKeys(password);
+            driver.findElement(By.xpath("//div[contains(@eventproxy,'LoginWindow')]//div[text()='Log in']")).click();
         }catch(StaleElementReferenceException e){
             System.out.println(e.getMessage());
         }

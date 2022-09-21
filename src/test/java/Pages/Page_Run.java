@@ -39,4 +39,24 @@ public class Page_Run extends ChromeDriverInit {
 
         System.out.println(list);
     }
+
+    @Test
+    public void Tools(){
+        List<String> list = new ArrayList<>();
+        Tools tools = new Tools();
+
+        tools.OpenList();
+        list.add(tools.TrashedItemsCheck());
+
+        tools.OpenList();
+        list.add(tools.QueueManagerCheck());
+
+        tools.OpenList();
+        list.add(tools.ImportMetaCheck());
+
+        tools.OpenList();
+        list.add(tools.ImportCheck());
+
+        System.out.println(list);
+    }
 }
