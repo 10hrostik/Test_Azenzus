@@ -37,6 +37,9 @@ public class Page_Run extends ChromeDriverInit {
         searchPage.OpenList();
         list.add(searchPage.commentCheck());
 
+        searchPage.OpenList();
+        list.add(searchPage.commentCheck());
+
         System.out.println(list);
     }
 
@@ -56,6 +59,12 @@ public class Page_Run extends ChromeDriverInit {
 
         tools.OpenList();
         list.add(tools.ImportCheck());
+
+        tools.OpenList();
+        list.add(tools.AdminPlantCheck());
+
+        tools.OpenList();
+        list.add(tools.AdminUserCheck());
 
         System.out.println(list);
     }
