@@ -141,7 +141,7 @@ public class Tools extends DriverConstructor {
             driver.findElement(By.xpath("//div[contains(@eventproxy,'PlantManagerSearchWindow_0')]//div[text() ='Search']")).click();
             List<WebElement> list = driver.findElement(By.xpath("//table[@width = '596']//tbody")).findElements(By.tagName("tr"));
             driver.findElement(By.xpath("//div[contains(@eventproxy,'PlantManagerSearchWindow_0_cl')]")).click();
-            return "Found "+list.size()+"+ plants";
+            return "Found "+list.size()+"+ link types";
         }catch(Exception e){
             System.out.println(e.getMessage());
             return "Not found";

@@ -66,6 +66,62 @@ public class Page_Run extends ChromeDriverInit {
         tools.OpenList();
         list.add(tools.AdminUserCheck());
 
+
+
         System.out.println(list);
+    }
+
+    @Test
+    public void Data(){
+        List<String> list = new ArrayList<>();
+        DataManagerTool data = new DataManagerTool();
+
+        data.OpenList();
+        list.add(data.LinkTypesCheck());
+
+        data.OpenList();
+        list.add(data.ReportCheck());
+
+        data.OpenList();
+        list.add(data.UnitCheck());
+
+        data.OpenList();
+        list.add(data.RoleCheck());
+
+        data.OpenList();
+        list.add(data.masterDataEquipmentCheck());
+
+        data.OpenList();
+        list.add(data.masterDataSpareCheck());
+
+        data.OpenList();
+        list.add(data.masterDataDocCheck());
+        System.out.print(list);
+
+        data.OpenList();
+        list.add(data.masterDataOtherCheck());
+
+        data.OpenList();
+        list.add(data.nmProductCheck());
+
+        data.OpenList();
+        list.add(data.nmCharCheck());
+
+        data.OpenList();
+        list.add(data.masterSyncCheck());
+
+        data.OpenList();
+        list.add(data.spareSyncCheck());
+
+        data.OpenList();
+        list.add(data.instanceEquipCheck());
+
+        data.OpenList();
+        list.add(data.instanceDocCheck());
+
+        data.OpenList();
+        list.add(data.instanceAspectCheck());
+
+        System.out.print(list);
     }
 }
