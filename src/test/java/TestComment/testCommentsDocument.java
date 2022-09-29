@@ -1,11 +1,11 @@
 package TestComment;
 
-import DocumentEditWindow.DocEditWindowGeneral;
-import DocumentManager.DocumentManagerAdvancedSearch;
-import DocumentManager.DocumentManagerGeneral;
-import General.OpenManager;
-import General.Parameters;
-import General.StartAndLogin;
+import documenteditwindow.DocEditWindowGeneral;
+import documentmanager.DocumentManagerAdvancedSearch;
+import documentmanager.DocumentManagerGeneral;
+import general.OpenManager;
+import general.Parameters;
+import general.StartAndLogin;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;

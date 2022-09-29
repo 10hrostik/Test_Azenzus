@@ -12,8 +12,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-import General.OpenManager;
-import General.StartAndLogin;
+import general.OpenManager;
+import general.StartAndLogin;
 
 class ImportAll {
 	
