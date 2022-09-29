@@ -6,8 +6,8 @@ public interface Builder {
     public void setMaximize(String max);
     public void setClose(String close);
     public void setSearchText(String searchText);
-    public void setButtomIcon1(String buttomIcon1);
-    public void setButtomIcon2(String buttomIcon2);
-    public void setButtomIcon3(String buttomIcon3);
-    public void setButtomIcon4(String buttomIcon4);
+    public void setBottomIcon1(String bottomIcon1);
+    public void setBottomIcon2(String bottomIcon2);
+    public void setBottomIcon3(String bottomIcon3);
+    public void setBottomIcon4(String bottomIcon4);
 }

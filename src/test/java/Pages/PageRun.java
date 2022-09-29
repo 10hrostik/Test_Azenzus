@@ -11,7 +11,7 @@ import java.util.List;
 
 public class PageRun extends ChromeDriverInit {
 
-
+     @Before
     public void login(){
         String login= Configs.LOGIN;
         String password = Configs.PASSWORD;
@@ -21,11 +21,11 @@ public class PageRun extends ChromeDriverInit {
     }
     @Test
     public void search(){
-        login();
+
         List<String> list = new ArrayList<>();
         SearchTool searchWindow = new SearchTool();
         for(String[] links : Links.searchLinks){
-            searchWindow.OpenList();
+            searchWindow.openList();
             list.add(searchWindow.windowCheck(links));
         }
         System.out.println(list);
@@ -34,10 +34,10 @@ public class PageRun extends ChromeDriverInit {
     @Test
     public void tools(){
         List<String> list = new ArrayList<>();
-        Tools tools = new Tools();
+        ToolsTool tools = new ToolsTool();
 
         for(String[] links : Links.toolLinks){
-            tools.OpenList();
+            tools.openList();
             list.add(tools.windowCheck(links));
         }
         System.out.println(list);
@@ -49,7 +49,7 @@ public class PageRun extends ChromeDriverInit {
         DataManagerTool data = new DataManagerTool();
 
         for(String[] links : Links.dataManagerLinks){
-            data.OpenList();
+            data.openList();
             list.add(data.windowCheck(links));
         }
         System.out.print(list);

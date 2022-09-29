@@ -6,6 +6,7 @@ import Icons.SearchBuilder;
 import ReadConfigs.Configs;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -14,20 +15,20 @@ import java.util.List;
 
 public class DataManagerTool extends DriverConstructor {
     @FindBy(xpath = "//td[text() = 'Data Manager']")
-    private WebElement DataBox;
+    private WebElement dataBox;
 
     public DataManagerTool(){
         driver.get(Configs.URL);
         PageFactory.initElements(driver,this);
     }
 
-    public void OpenList(){
+    public void openList(){
         try{
             Thread.sleep(1500);
-            DataBox.click();
-            boolean expected[] = {true,true,true,true,true,true,true};
+            dataBox.click();
+            boolean expected=true;
             Thread.sleep(200);
-            Assert.assertArrayEquals(expected,isDisplayed());
+            Assert.assertEquals(expected,isDisplayed());
 
         }catch(Exception e){
             System.out.print(e.getMessage());
@@ -80,17 +81,21 @@ public class DataManagerTool extends DriverConstructor {
             }
     }
 
-    private boolean[] isDisplayed(){
-        boolean mass[] = new boolean[7];
-        if(driver.findElement(By.xpath("//div[text() = 'Synchronize']")).isDisplayed()) mass[0] =true;
-        if(driver.findElement(By.xpath("//div[text() = 'Masterdata']")).isDisplayed()) mass[1] =true;
-        if(driver.findElement(By.xpath("//div[text() = 'N&M Manager']")).isDisplayed()) mass[2] =true;
-        if(driver.findElement(By.xpath("//div[text() = 'Link Types Manager']")).isDisplayed()) mass[3] =true;
-        if(driver.findElement(By.xpath("//div[text() = 'Role Manager']")).isDisplayed()) mass[4] =true;
-        if(driver.findElement(By.xpath("//div[text() = 'Unit Manager']")).isDisplayed()) mass[5] =true;
-        if(driver.findElement(By.xpath("//div[text() = 'Reports Manager']")).isDisplayed()) mass[6] =true;
+    private boolean isDisplayed(){
+       try {
+           if (!driver.findElement(By.xpath("//div[text() = 'Synchronize']")).isDisplayed()) return false;
+           if (!driver.findElement(By.xpath("//div[text() = 'Masterdata']")).isDisplayed()) return false;
+           if (!driver.findElement(By.xpath("//div[text() = 'N&M Manager']")).isDisplayed()) return false;
+           if (!driver.findElement(By.xpath("//div[text() = 'Link Types Manager']")).isDisplayed()) return false;
+           if (!driver.findElement(By.xpath("//div[text() = 'Role Manager']")).isDisplayed()) return false;
+           if (!driver.findElement(By.xpath("//div[text() = 'Unit Manager']")).isDisplayed()) return false;
+           if (!driver.findElement(By.xpath("//div[text() = 'Reports Manager']")).isDisplayed()) return false;
 
-        return mass;
+           return true;
+       }catch(NoSuchElementException e){
+           System.out.println(e.getMessage());
+           return false;
+       }
     }
 
 }

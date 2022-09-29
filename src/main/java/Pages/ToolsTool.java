@@ -6,29 +6,30 @@ import Icons.SearchBuilder;
 import ReadConfigs.Configs;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class Tools extends DriverConstructor {
+public class ToolsTool extends DriverConstructor {
 
     @FindBy(xpath = "//td[text() = 'Tools']")
-    private WebElement ToolsBox;
+    private WebElement toolsBox;
 
-    public Tools(){
+    public ToolsTool(){
         driver.get(Configs.URL);
         PageFactory.initElements(driver,this);
     }
 
-    public void OpenList(){
+    public void openList(){
         try{
             Thread.sleep(1500);
-            ToolsBox.click();
-            boolean expected[] = {true,true,true,true,true};
+            toolsBox.click();
+            boolean expected = true;
             Thread.sleep(200);
-            Assert.assertArrayEquals(expected,isDisplayed());
+            Assert.assertEquals(expected,isDisplayed());
 
         }catch(Exception e){
             System.out.print(e.getMessage());
@@ -83,15 +84,18 @@ public class Tools extends DriverConstructor {
             return "Not found";
         }
     }
-    private boolean[] isDisplayed(){
-        boolean mass[] = new boolean[5];
+    private boolean isDisplayed(){
+        try{
+            if(!driver.findElement(By.xpath("//div[text() = 'Administration']")).isDisplayed()) return false;
+            if(!driver.findElement(By.xpath("//div[text() = 'Import (dynamic)']")).isDisplayed()) return false;
+            if(!driver.findElement(By.xpath("//div[text() = 'Import Meta']")).isDisplayed()) return false;
+            if(!driver.findElement(By.xpath("//div[text() = 'Queue Manager']")).isDisplayed()) return false;
+            if(!driver.findElement(By.xpath("//div[text() = 'Trashed Items Manager']")).isDisplayed()) return false;
 
-        if(driver.findElement(By.xpath("//div[text() = 'Administration']")).isDisplayed()) mass[0] =true;
-        if(driver.findElement(By.xpath("//div[text() = 'Import (dynamic)']")).isDisplayed()) mass[1] =true;
-        if(driver.findElement(By.xpath("//div[text() = 'Import Meta']")).isDisplayed()) mass[2] =true;
-        if(driver.findElement(By.xpath("//div[text() = 'Queue Manager']")).isDisplayed()) mass[3] =true;
-        if(driver.findElement(By.xpath("//div[text() = 'Trashed Items Manager']")).isDisplayed()) mass[4] =true;
-
-        return mass;
+            return true;
+        }catch(NoSuchElementException e){
+            System.out.print(e.getMessage());
+            return false;
+        }
     }
 }

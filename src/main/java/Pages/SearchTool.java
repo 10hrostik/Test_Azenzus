@@ -20,7 +20,7 @@ public class SearchTool extends DriverConstructor {
         PageFactory.initElements(driver, this);
     }
 
-    public void OpenList() {
+    public void openList() {
         try {
             Thread.sleep(1500);
             searchBox.click();

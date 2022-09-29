@@ -13,13 +13,13 @@ import org.openqa.selenium.support.PageFactory;
 public class LoginPage extends DriverConstructor {
 
     @FindBy(xpath = "//input[@name ='loginField']")
-    private WebElement LoginBox;
+    private WebElement loginBox;
 
     @FindBy(xpath = "//input[@name='passwordField']")
-    private WebElement PassWordBox;
+    private WebElement passWordBox;
 
     @FindBy(xpath = "//div[text() = 'Login']")
-    private WebElement EnterBox;
+    private WebElement enterBox;
 
     public LoginPage(){
         driver.get(Configs.URL);
@@ -27,12 +27,12 @@ public class LoginPage extends DriverConstructor {
     }
 
     public LoginPage Auth(String login , String password){
-        
+
         try{
             Thread.sleep(500);
-            LoginBox.sendKeys(login);
-            PassWordBox.sendKeys(password);
-            EnterBox.click();
+            loginBox.sendKeys(login);
+            passWordBox.sendKeys(password);
+            enterBox.click();
             Thread.sleep(1000);
             if(!driver.findElement((By.xpath("//td[text() = 'Search']"))).isDisplayed()){
                 driver.findElement(By.xpath("//input[@name = 'username']")).sendKeys(login);
