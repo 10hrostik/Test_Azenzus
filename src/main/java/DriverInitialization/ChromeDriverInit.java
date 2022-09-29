@@ -1,4 +1,4 @@
-package Driver_Init;
+package DriverInitialization;
 
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -21,7 +21,6 @@ abstract public class ChromeDriverInit {
         driver.manage().timeouts().implicitlyWait(65,TimeUnit.SECONDS);
         DriverConstructor.setDriver(driver);
     }
-
 
     @After
     public void shutDown(){

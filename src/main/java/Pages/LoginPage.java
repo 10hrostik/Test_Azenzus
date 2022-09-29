@@ -1,5 +1,5 @@
 package Pages;
-import Driver_Init.DriverConstructor;
+import DriverInitialization.DriverConstructor;
 import ReadConfigs.Configs;
 
 import org.openqa.selenium.By;
@@ -10,7 +10,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 
-public class Login_Page extends DriverConstructor {
+public class LoginPage extends DriverConstructor {
 
     @FindBy(xpath = "//input[@name ='loginField']")
     private WebElement LoginBox;
@@ -21,12 +21,13 @@ public class Login_Page extends DriverConstructor {
     @FindBy(xpath = "//div[text() = 'Login']")
     private WebElement EnterBox;
 
-    public Login_Page(){
+    public LoginPage(){
         driver.get(Configs.URL);
         PageFactory.initElements(driver,this);
     }
 
-    public Login_Page Auth(String login , String password){
+    public LoginPage Auth(String login , String password){
+        
         try{
             Thread.sleep(500);
             LoginBox.sendKeys(login);
