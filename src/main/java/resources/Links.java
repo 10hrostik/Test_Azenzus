@@ -62,8 +62,6 @@ public class Links {
             "//div[contains(@eventproxy,'CommentSearchWindowNew_0')]//div[text() = 'Report']",
             "//div[contains(@eventproxy,'CommentSearchWindowNew_0')]//div[text() = 'Search']",
             "//td[contains(text(),'row')]"
-    },{
-
     }
     };
 

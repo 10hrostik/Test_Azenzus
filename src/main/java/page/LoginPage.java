@@ -42,11 +42,7 @@ public class LoginPage  {
             passWordBox.sendKeys(password);
             enterBox.click();
             Thread.sleep(1000);
-            if (!driver.findElement((By.xpath("//td[text() = 'Search']"))).isDisplayed()) {
-                driver.findElement(By.xpath("//input[@name = 'username']")).sendKeys(login);
-                driver.findElement(By.xpath("//input[@name = 'password']")).sendKeys(password);
-                driver.findElement(By.xpath("//div[contains(@eventproxy,'LoginWindow')]//div[text()='Log in']")).click();
-            }
+            if (!driver.findElement((By.xpath("//td[text() = 'Search']"))).isDisplayed())
             Thread.sleep(500);
         }catch(InterruptedException e){
             System.out.println(e.getMessage());

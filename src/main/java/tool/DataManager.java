@@ -51,24 +51,7 @@ public class DataManager extends LoginPage {
                 Assert.assertEquals(true,builder.getResult().check());
 
                 if (!links[11].equals("Not needed")) {
-                    if (links[12].contains("Found")) {
-                        driver.findElement(By.xpath(links[11])).click();
-                        Thread.sleep(1500);
-                        String findElements = driver.findElement(By.xpath(links[12])).getText();
-                        driver.findElement(By.xpath(links[6])).click();
-                        return findElements;
-                    }if (links[11].contains("tbody")){
-                        List<WebElement> list = driver.findElement(By.xpath(links[11])).findElements(By.tagName(links[12]));
-                        driver.findElement(By.xpath(links[6])).click();
-                        return "Found " + list.size() + "+ elements";
-                    }
-                    else{
-                            driver.findElement(By.xpath(links[11])).click();
-                            List<WebElement> list = driver.findElement(By.xpath(links[12])).findElements(By.tagName(links[13]));
-
-                            driver.findElement(By.xpath(links[6])).click();
-                            return "Found " + list.size() + "+ elements";
-                    }
+                    return result(links);
 
                 }else{
                     System.out.println();
@@ -81,6 +64,32 @@ public class DataManager extends LoginPage {
                 System.out.println(e.getMessage());
                 return "Not found";
             }
+    }
+
+    private String result(String[] links){
+        try {
+            if (links[12].contains("Found")) {
+                driver.findElement(By.xpath(links[11])).click();
+                Thread.sleep(1500);
+                String findElements = driver.findElement(By.xpath(links[12])).getText();
+                driver.findElement(By.xpath(links[6])).click();
+                return findElements;
+            }
+            if (links[11].contains("tbody")) {
+                List<WebElement> list = driver.findElement(By.xpath(links[11])).findElements(By.tagName(links[12]));
+                driver.findElement(By.xpath(links[6])).click();
+                return "Found " + list.size() + "+ elements";
+            } else {
+                driver.findElement(By.xpath(links[11])).click();
+                List<WebElement> list = driver.findElement(By.xpath(links[12])).findElements(By.tagName(links[13]));
+
+                driver.findElement(By.xpath(links[6])).click();
+                return "Found " + list.size() + "+ elements";
+            }
+        }catch(InterruptedException e){
+            System.out.println(e.getMessage());
+            return "Not found";
+        }
     }
 
     private boolean isDisplayed(){
