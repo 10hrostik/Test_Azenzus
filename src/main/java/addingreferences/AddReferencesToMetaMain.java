@@ -1,12 +1,12 @@
 package addingreferences;
 
-import documentmanager.DocumentManagerAdvancedSearch;
-import documentmanager.DocumentManagerGeneral;
-import documentmanager.DocumentReferenceWindow;
+import document.manager.DocumentManagerAdvancedSearch;
+import document.manager.DocumentManagerGeneral;
+import document.manager.DocumentReferenceWindow;
 import general.OpenManager;
 import general.StartAndLogin;
 import general.Parameters;
-import metadatamanager.MetadataManager;
+import metadata.datamanager.MetadataManager;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
