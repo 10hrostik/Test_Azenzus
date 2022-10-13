@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Azenzus" />
         <module name="Work_Azenzus" />
+        <module name="Test_Azenzus" />
       </profile>
     </annotationProcessing>
   </component>

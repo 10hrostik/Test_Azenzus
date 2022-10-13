@@ -355,4 +355,8 @@ public class Links {
             "//div[contains(@eventproxy,'InstanceSynchronizationWindow_2')]//div[text() = 'Search']",
             "//div[contains(@eventproxy,'InstanceSynchronizationWindow_2')]//td[contains(text(),'Found')]"
     }};
+
+    public static String location[] = {};
+    public static String function[] = {};
+    public static String document[] = {};
 }

@@ -22,17 +22,20 @@ public class Location extends LoginPage {
     }
 
     public void openPlant(){
+
         try{
             driver.findElement(By.xpath("//table[contains(@style , '143px')]//img[contains(@src, 'selectPicker')]")).click();
             List<WebElement> elements = driver.findElement(By.xpath("//table[@width = 139]//tbody")).findElements(By.tagName("tr"));
             elements.get(1).click();
             driver.findElement(By.xpath("//table[contains(@style , '101px')]//img[contains(@src, 'selectPicker')]")).click();
-            driver.findElement(By.xpath("//td[@height]//div[text() = 'Location']")).click();
-            WebElement plantTree = driver.findElement(By.xpath("//div[contains(@style , 'width:250')]"));
+            driver.findElement(By.xpath("//td[@height]//div[text() = 'Document']")).click();
+            List<WebElement> list = driver.findElement(By.xpath("//table[@width = 232]//tbody")).findElements(By.tagName("tr"));
             Actions act = new Actions(driver);
-            act.contextClick(plantTree).perform();
-
+            act.contextClick(list.get(0)).perform();
+            Thread.sleep(500);
         }catch(NoSuchElementException e){
+            System.out.println(e.getMessage());
+        }catch(InterruptedException e){
             System.out.println(e.getMessage());
         }
     }
