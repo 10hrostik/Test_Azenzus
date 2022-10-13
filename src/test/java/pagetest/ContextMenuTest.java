@@ -14,14 +14,14 @@ public class ContextMenuTest {
     public void Function(){
         Function fun = new Function();
         fun.openPlant();
-        Boolean checked = fun.windowCheck(Links.document);
+        Boolean checked = fun.windowCheck(Links.function);
         System.out.println("All function context menu buttons are correct? "+checked);
     }
     @Test
     public void Location(){
         Location location = new Location();
         location.openPlant();
-        Boolean checked = location.windowCheck(Links.document);
+        Boolean checked = location.windowCheck(Links.location);
         System.out.println("All location context menu buttons are correct? "+checked);
     }
 
