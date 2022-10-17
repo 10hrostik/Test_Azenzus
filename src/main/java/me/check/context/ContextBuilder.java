@@ -84,7 +84,66 @@ public class ContextBuilder implements Builder{
         context.nm = nm;
         return this;
     }
-
+    public Builder setProduct(String product){
+        context.product = product;
+        return this;
+    }
+    public Builder setFunction(String function){
+        context.function = function;
+        return this;
+    }
+    public Builder setLocation(String location){
+        context.location = location;
+        return this;
+    }
+    public Builder setDocument(String document){
+        context.document = document;
+        return this;
+    }
+    public Builder setCharacteristic(String characteristic){
+        context.characteristic = characteristic;
+        return this;
+    }
+    public Builder setOther(String other){
+        context.other = other;
+        return this;
+    }
+    public Builder setRoot(String root){
+        context.rootNode = root;
+        return this;
+    }
+    public Builder setSub(String sub){
+        context.subNode = sub;
+        return this;
+    }
+    public Builder setEditRdc(String editRdc){
+        context.editRdc = editRdc;
+        return this;
+    }
+    public Builder setRenameRdc(String renameRdc){
+        context.renameRdc = renameRdc;
+        return this;
+    }
+    public Builder setDeleteNode(String deleteNode){
+        context.deleteNode = deleteNode;
+        return this;
+    }
+    public Builder setDeleteAspect(String deleteAspect){
+        context.deleteAspect = deleteAspect;
+        return this;
+    }
+    public Builder setOrderCatalogue(String orderCatalogue){
+        context.orderCatalogue = orderCatalogue;
+        return this;
+    }
+    public Builder setOrderConstraint(String orderConstraint){
+        context.orderConstraint = orderConstraint;
+        return this;
+    }
+    public Builder setOrderAbstract(String orderAbstract){
+        context.orderAbstract = orderAbstract;
+        return this;
+    }
     public ContextMenu getResult(){
         return context;
     }

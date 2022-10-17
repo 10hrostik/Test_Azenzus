@@ -356,7 +356,48 @@ public class Links {
             "//div[contains(@eventproxy,'InstanceSynchronizationWindow_2')]//td[contains(text(),'Found')]"
     }};
 
-    public static String location[] = {};
+    public static String location[] = {"//div[text() = 'Synchronize...']",
+            "//div[text() = 'Edit...']",
+            "//div[text() = 'Edit Dummy Master...']",
+            "//div[contains(text() , 'Noun')]",
+            "//div[text() = 'Bulk Add Contact...']",
+            "//div[text() = 'Mapping links']",
+            "//div[text() = 'Model Tree']",
+            "//div[text() = 'Detach']",
+            "//div[contains(text() , 'Move Equipment')]",
+            "//div[text() = 'Replace Metadata...']",
+            "//div[text() = 'Visibility...']",
+            "//div[text() = 'History...']",
+            "//div[text() = 'Details...']",
+            "//div[text() = 'Locator...']",
+            "//div[text() = 'Order Equipment']",
+            "//div[contains(text() , 'Change Equipment']",
+            "//div[text() = 'Print']",
+            "//div[text() = 'Refresh']",
+            "//div[text() = 'Expand All']",
+            "//div[text() = 'Collapse All']",
+
+
+            // SubContext links
+            "//div[contains(text() , 'Product')]",
+            "//div[contains(text() , 'Function')]",
+            "//div[contains(text() , 'Location')]",
+            "//div[contains(text() , 'Document')]",
+            "//div[contains(text() , 'Characteristic')]",
+            "//div[contains(text() , 'Other')]",
+            "//div[contains(text() , 'Add root node...')]",
+            "//div[contains(text() , 'Add sub node...')]",
+            "//div[contains(text() , 'Edit RDCs...')]",
+            "//div[contains(text() , 'Rename RDCs...')]",
+            "//div[contains(text() , 'Delete node')]",
+            "//div[contains(text() , 'Delete aspect with')]",
+            "//div[contains(text() , 'Catalogue')]",
+            "//div[contains(text() , 'Constrained')]",
+            "//div[contains(text() , 'Abstract')]"
+
+    };
+
     public static String function[] = {};
+
     public static String document[] = {};
 }

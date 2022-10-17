@@ -11,14 +11,14 @@ import org.junit.Test;
 public class ContextMenuTest {
 
     @Test
-    public void Function(){
+    public void function(){
         Function fun = new Function();
         fun.openPlant();
         Boolean checked = fun.windowCheck(Links.function);
         System.out.println("All function context menu buttons are correct? "+checked);
     }
     @Test
-    public void Location(){
+    public void location(){
         Location location = new Location();
         location.openPlant();
         Boolean checked = location.windowCheck(Links.location);

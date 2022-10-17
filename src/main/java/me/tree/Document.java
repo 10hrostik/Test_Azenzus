@@ -50,6 +50,9 @@ public class Document extends LoginPage {
                     , links[5] , links[6] , links[7] , links[8] , links[9]
                     , links[10] , links[11] , links[12] , links[13] , links[14]
                     , links[15] , links[16] , links[17] , links[18] , links[19]
+                    , links[20] , links[21] , links[22] , links[23] , links[24]
+                    , links[25] , links[26] , links[27] , links[28] , links[29]
+                    , links[30] , links[31] , links[32] , links[33] , links[34]
             };
             director.buildSearch(builder,buttonCheck);
             builder.getResult().setDriver(driver);

@@ -21,4 +21,19 @@ public interface Builder {
     public Builder setExpand(String expand);
     public Builder setCollapse(String collapse);
     public Builder setNm(String nm);
+    public Builder setProduct(String product);
+    public Builder setFunction(String function);
+    public Builder setLocation(String location);
+    public Builder setDocument(String document);
+    public Builder setCharacteristic(String characteristic);
+    public Builder setOther(String other);
+    public Builder setRoot(String root);
+    public Builder setSub(String sub);
+    public Builder setEditRdc(String editRdc);
+    public Builder setRenameRdc(String renameRdc);
+    public Builder setDeleteNode(String deleteNode);
+    public Builder setDeleteAspect(String deleteAspect);
+    public Builder setOrderCatalogue(String orderCatalogue);
+    public Builder setOrderConstraint(String orderConstraint);
+    public Builder setOrderAbstract(String orderAbstract);
 }
