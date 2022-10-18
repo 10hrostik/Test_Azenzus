@@ -14,14 +14,14 @@ public class ContextMenuTest {
     public void function(){
         Function fun = new Function();
         fun.openPlant();
-        Boolean checked = fun.windowCheck(Links.function);
+        Boolean checked = fun.windowCheck(Links.contextMenu,Links.subContextMenu);
         System.out.println("All function context menu buttons are correct? "+checked);
     }
     @Test
     public void location(){
         Location location = new Location();
         location.openPlant();
-        Boolean checked = location.windowCheck(Links.location);
+        Boolean checked = location.windowCheck(Links.contextMenu,Links.subContextMenu);
         System.out.println("All location context menu buttons are correct? "+checked);
     }
 
@@ -29,7 +29,7 @@ public class ContextMenuTest {
     public void document(){
         Document doc = new Document();
         doc.openPlant();
-        Boolean checked = doc.windowCheck(Links.document);
+        Boolean checked = doc.windowCheck(Links.contextMenu,Links.subContextMenu);
         System.out.println("All document context menu buttons are correct? "+checked);
     }
 

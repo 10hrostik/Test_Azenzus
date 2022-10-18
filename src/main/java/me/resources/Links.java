@@ -356,7 +356,7 @@ public class Links {
             "//div[contains(@eventproxy,'InstanceSynchronizationWindow_2')]//td[contains(text(),'Found')]"
     }};
 
-    public static String location[] = {"//div[text() = 'Synchronize...']",
+    public static String contextMenu[] = {"//div[text() = 'Synchronize...']",
             "//div[text() = 'Edit...']",
             "//div[text() = 'Edit Dummy Master...']",
             "//div[contains(text() , 'Noun')]",
@@ -364,40 +364,45 @@ public class Links {
             "//div[text() = 'Mapping links']",
             "//div[text() = 'Model Tree']",
             "//div[text() = 'Detach']",
-            "//div[contains(text() , 'Move Equipment')]",
+            "//div[contains(text() , ' to trash')]",
             "//div[text() = 'Replace Metadata...']",
             "//div[text() = 'Visibility...']",
             "//div[text() = 'History...']",
             "//div[text() = 'Details...']",
             "//div[text() = 'Locator...']",
-            "//div[text() = 'Order Equipment']",
-            "//div[contains(text() , 'Change Equipment']",
+            "//div[contains(text() , 'Order ')]",
+            "//div[contains(text() , 'Change ')]",
             "//div[text() = 'Print']",
             "//div[text() = 'Refresh']",
             "//div[text() = 'Expand All']",
             "//div[text() = 'Collapse All']",
 
 
-            // SubContext links
+    };
+    public static String subContextMenu[] = {
             "//div[contains(text() , 'Product')]",
-            "//div[contains(text() , 'Function')]",
-            "//div[contains(text() , 'Location')]",
-            "//div[contains(text() , 'Document')]",
+            "//table[@width = 146]//div[contains(text() , 'Function')]",
+            "//table[@width = 146]//div[contains(text() , 'Location')]",
+            "//table[@width = 146]//div[text() = 'Document']",
             "//div[contains(text() , 'Characteristic')]",
             "//div[contains(text() , 'Other')]",
             "//div[contains(text() , 'Add root node...')]",
             "//div[contains(text() , 'Add sub node...')]",
             "//div[contains(text() , 'Edit RDCs...')]",
-            "//div[contains(text() , 'Rename RDCs...')]",
+            "//div[contains(text() , 'Rename RDC...')]",
             "//div[contains(text() , 'Delete node')]",
             "//div[contains(text() , 'Delete aspect with')]",
+            "//table[@width = 146]//div[text() = 'Detach']",
+            "//div[contains(text() , 'in this Tree')]",
+            "//div[contains(text() , 'in all Trees')]",
             "//div[contains(text() , 'Catalogue')]",
             "//div[contains(text() , 'Constrained')]",
-            "//div[contains(text() , 'Abstract')]"
-
+            "//div[contains(text() , 'Abstract')]",
+            "//div[contains(@style ,'125px')]//div[text() = 'Catalogue')]",
+            "//div[contains(@style ,'125px')]//div[text() = 'Catalogue > Constrained...']",
+            "//div[contains(@style ,'125px')]//div[text() = 'Abstract > Constrained...']",
+            "//div[contains(@style ,'125px')]//div[text() = 'Constrained > Abstract...']",
+            "//div[contains(@style ,'125px')]//div[text() = 'Constrained > Constrained...']"
     };
-
-    public static String function[] = {};
-
-    public static String document[] = {};
 }
+

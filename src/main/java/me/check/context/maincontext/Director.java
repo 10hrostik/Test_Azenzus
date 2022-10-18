@@ -1,8 +1,10 @@
-package me.check.context;
+package me.check.context.maincontext;
 
+
+import me.check.context.maincontext.Builder;
 
 public class Director {
-    public void buildSearch(Builder builder , String[] links){
+    public void buildMain(Builder builder , String[] links){
         builder.setSynchronize(links[0])
                 .setEdit(links[1])
                 .setEditMaster(links[2])
@@ -22,22 +24,6 @@ public class Director {
                 .setRefresh(links[16])
                 .setExpand(links[17])
                 .setCollapse(links[18])
-                .setNm(links[19])
-
-                .setProduct(links[20])
-                .setFunction(links[21])
-                .setLocation(links[22])
-                .setDocument(links[23])
-                .setCharacteristic(links[24])
-                .setOther(links[25])
-                .setRoot(links[26])
-                .setSub(links[27])
-                .setEditRdc(links[28])
-                .setRenameRdc(links[29])
-                .setDeleteNode(links[30])
-                .setDeleteAspect(links[31])
-                .setOrderCatalogue(links[32])
-                .setOrderConstraint(links[33])
-                .setOrderAbstract(links[34]);
+                .setNm(links[19]);
     }
 }

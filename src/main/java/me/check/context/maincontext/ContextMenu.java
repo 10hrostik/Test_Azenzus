@@ -1,4 +1,4 @@
-package me.check.context;
+package me.check.context.maincontext;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -56,27 +56,6 @@ public class ContextMenu {
 
     String document;
 
-    String characteristic;
-
-    String other;
-
-    String rootNode;
-
-    String subNode;
-
-    String editRdc;
-
-    String renameRdc;
-
-    String deleteNode;
-
-    String deleteAspect;
-
-    String orderCatalogue;
-
-    String orderConstraint;
-
-    String orderAbstract;
     public void setDriver(WebDriver driver){
         this.driver=driver;
     }
@@ -103,24 +82,6 @@ public class ContextMenu {
             if (expand != null) if (!driver.findElement(By.xpath(expand)).isDisplayed()) return false;
             if (collapse != null) if (!driver.findElement(By.xpath(collapse)).isDisplayed()) return false;
             if (nm != null) if (!driver.findElement(By.xpath(nm)).isDisplayed()) return false;
-
-            // Subcontext button
-
-            if (product != null) if(!driver.findElement(By.xpath(product)).isDisplayed()) return false;
-            if (function != null) if(!driver.findElement(By.xpath(function)).isDisplayed()) return false;
-            if (location != null) if(!driver.findElement(By.xpath(location)).isDisplayed()) return false;
-            if (document != null) if(!driver.findElement(By.xpath(document)).isDisplayed()) return false;
-            if (characteristic != null) if(!driver.findElement(By.xpath(characteristic)).isDisplayed()) return false;
-            if (other != null) if(!driver.findElement(By.xpath(other)).isDisplayed()) return false;
-            if (rootNode != null) if(!driver.findElement(By.xpath(rootNode)).isDisplayed()) return false;
-            if (subNode != null) if(!driver.findElement(By.xpath(subNode)).isDisplayed()) return false;
-            if (editRdc != null) if(!driver.findElement(By.xpath(editRdc)).isDisplayed()) return false;
-            if (renameRdc != null) if(!driver.findElement(By.xpath(renameRdc)).isDisplayed()) return false;
-            if (deleteNode != null) if(!driver.findElement(By.xpath(deleteNode)).isDisplayed()) return false;
-            if (deleteAspect != null) if(!driver.findElement(By.xpath(deleteAspect)).isDisplayed()) return false;
-            if (orderCatalogue != null) if(!driver.findElement(By.xpath(orderCatalogue)).isDisplayed()) return false;
-            if (orderConstraint != null) if(!driver.findElement(By.xpath(orderConstraint)).isDisplayed()) return false;
-            if (orderAbstract != null) if(!driver.findElement(By.xpath(orderAbstract)).isDisplayed()) return false;
 
             return true;
         }catch(NoSuchElementException e){
