@@ -100,6 +100,14 @@ public class SubContextMenuBuilder implements SubContextBuilder{
         menu.constraintToConstraint = constraintToConstraint;
         return this;
     }
+    public SubContextBuilder setCreateDocument(String createDocument){
+        menu.createDocument = createDocument;
+        return this;
+    }
+    public SubContextBuilder setDocumentWizard(String documentWizard){
+        menu.documentWizard = documentWizard;
+        return this;
+    }
     public SubContextMenu getResult(){
         return menu;
     }

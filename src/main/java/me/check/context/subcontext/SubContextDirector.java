@@ -24,6 +24,8 @@ public class SubContextDirector {
                 .setCatalogueToConstraint(links[19])
                 .setConstraintToAbstract(links[20])
                 .setAbstractToConstraint(links[21])
-                .setConstraintToConstraint(links[22]);
+                .setConstraintToConstraint(links[22])
+                .setCreateDocument(links[23])
+                .setDocumentWizard(links[24]);
     }
 }

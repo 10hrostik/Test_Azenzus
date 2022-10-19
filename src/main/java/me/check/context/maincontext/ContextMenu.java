@@ -48,13 +48,6 @@ public class ContextMenu {
 
     String nm;
 
-    String product;
-
-    String function;
-
-    String location;
-
-    String document;
 
     public void setDriver(WebDriver driver){
         this.driver=driver;
@@ -84,7 +77,7 @@ public class ContextMenu {
             if (nm != null) if (!driver.findElement(By.xpath(nm)).isDisplayed()) return false;
 
             return true;
-        }catch(NoSuchElementException e){
+        }catch(Exception e){
             System.out.print(e.getMessage());
             return false;
         }

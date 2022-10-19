@@ -29,4 +29,6 @@ public interface SubContextBuilder {
     public SubContextBuilder setConstraintToAbstract(String constraintToAbstract);
     public SubContextBuilder setAbstractToConstraint(String abstractToConstraint);
     public SubContextBuilder setConstraintToConstraint(String constraintToConstraint);
+    public SubContextBuilder setCreateDocument(String createDocument);
+    public SubContextBuilder setDocumentWizard(String documentWizard);
 }

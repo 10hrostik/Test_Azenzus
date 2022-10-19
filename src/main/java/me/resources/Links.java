@@ -398,11 +398,41 @@ public class Links {
             "//div[contains(text() , 'Catalogue')]",
             "//div[contains(text() , 'Constrained')]",
             "//div[contains(text() , 'Abstract')]",
-            "//div[contains(@style ,'125px')]//div[text() = 'Catalogue')]",
+            "//div[contains(@style ,'125px')]//div[text() = 'Catalogue']",
             "//div[contains(@style ,'125px')]//div[text() = 'Catalogue > Constrained...']",
             "//div[contains(@style ,'125px')]//div[text() = 'Abstract > Constrained...']",
             "//div[contains(@style ,'125px')]//div[text() = 'Constrained > Abstract...']",
-            "//div[contains(@style ,'125px')]//div[text() = 'Constrained > Constrained...']"
+            "//div[contains(@style ,'125px')]//div[text() = 'Constrained > Constrained...']",
+            null,
+            null
+    };
+
+    public static String subContextDocMenu[] = {
+            "//div[contains(text() , 'Product')]",
+            "//table[@width = 146]//div[contains(text() , 'Function')]",
+            "//table[@width = 146]//div[contains(text() , 'Location')]",
+            "//table[@width = 146]//div[text() = 'Document']",
+            "//div[contains(text() , 'Characteristic')]",
+            "//div[contains(text() , 'Other')]",
+            "//div[contains(text() , 'Add root node...')]",
+            "//div[contains(text() , 'Add sub node...')]",
+            "//div[contains(text() , 'Edit RDCs...')]",
+            "//div[contains(text() , 'Rename RDC...')]",
+            "//div[contains(text() , 'Delete node')]",
+            "//div[contains(text() , 'Delete aspect with')]",
+            "//table[@width = 146]//div[text() = 'Detach']",
+            "//div[contains(text() , 'in this Tree')]",
+            "//div[contains(text() , 'in all Trees')]",
+            "//div[contains(text() , 'Catalogue Document')]",
+            "//div[contains(text() , 'Constrained Document')]",
+            "//div[contains(text() , 'Abstract Document')]",
+            "//div[contains(@style ,'125px')]//div[contains(text() , 'Document Catalogue')]",
+            "//div[contains(@style ,'125px')]//div[text() = 'Catalogue > Constrained...']",
+            "//div[contains(@style ,'125px')]//div[text() = 'Abstract > Constrained...']",
+            "//div[contains(@style ,'125px')]//div[text() = 'Constrained > Abstract...']",
+            "//div[contains(@style ,'125px')]//div[text() = 'Constrained > Constrained...']",
+            "//div[text() = 'Create document']",
+            "//div[text() = 'Document wizard']"
     };
 }
 

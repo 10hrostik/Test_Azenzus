@@ -53,6 +53,9 @@ public class SubContextMenu {
 
     String constraintToConstraint;
 
+    String createDocument;
+
+    String documentWizard;
 
     public void setDriver(WebDriver driver){
         this.driver=driver;
@@ -107,6 +110,11 @@ public class SubContextMenu {
             if (catalogue != null) if (!driver.findElement(By.xpath(catalogue)).isDisplayed()) return false;
             if (constraint != null) if (!driver.findElement(By.xpath(constraint)).isDisplayed()) return false;
             if (abstractEquipment != null) if (!driver.findElement(By.xpath(abstractEquipment)).isDisplayed()) return false;
+            if (createDocument != null && documentWizard !=null){
+                driver.findElement(By.xpath("//table[@width = 146]//img[contains(@src , 'submenu')]")).click();
+                if (!driver.findElement(By.xpath(createDocument)).isDisplayed()) return false;
+                if (!driver.findElement(By.xpath(documentWizard)).isDisplayed()) return false;
+            }
 
             return true;
         }catch(NoSuchElementException e){

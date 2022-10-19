@@ -29,7 +29,7 @@ public class ContextMenuTest {
     public void document(){
         Document doc = new Document();
         doc.openPlant();
-        Boolean checked = doc.windowCheck(Links.contextMenu,Links.subContextMenu);
+        Boolean checked = doc.windowCheck(Links.contextMenu,Links.subContextDocMenu);
         System.out.println("All document context menu buttons are correct? "+checked);
     }
 

@@ -31,29 +31,36 @@ public class Document extends LoginPage {
             driver.findElement(By.xpath("//table[contains(@style , '101px')]//img[contains(@src, 'selectPicker')]")).click();
             driver.findElement(By.xpath("//td[@height]//div[text() = 'Document']")).click();
             driver.findElement(By.xpath("//table[@width = 232]//span[contains(@style , 'opener')]")).click();
-            WebElement item = driver.findElement(By.xpath("//i[contains(text(),'MUD')]"));
-            Actions actions = new Actions(driver);
-            actions.contextClick(item).perform();
+
         }catch(NoSuchElementException e){
             System.out.println(e.getMessage());
         }
     }
     public boolean windowCheck(String mainLinks[],String subLinks[]) {
         try {
-            WebElement item = driver.findElement(By.xpath("//i[contains(text(),'MUD')]"));
+
+            WebElement item = driver.findElement(By.xpath("//i[contains(text(),'Covizmo')]"));
             Actions actions = new Actions(driver);
+
             Director director = new Director();
             ContextBuilder builder = new ContextBuilder();
             director.buildMain(builder,mainLinks);
             builder.getResult().setDriver(driver);
-            Thread.sleep(40);
-            Assert.assertEquals(true,builder.getResult().check());
 
             SubContextDirector subContextDirector = new SubContextDirector();
             SubContextMenuBuilder subContextBuilder = new SubContextMenuBuilder();
             subContextDirector.buildSub(subContextBuilder,subLinks);
             subContextBuilder.getResult().setDriver(driver);
+            Thread.sleep(1000);
 
+            actions.contextClick(item).perform();
+            Thread.sleep(700);
+            actions.contextClick(item).perform();
+            Assert.assertEquals(true,builder.getResult().check());
+
+
+
+            actions.contextClick(item).perform();
             driver.findElement(By.xpath(mainLinks[3])).click();
             Assert.assertEquals(true,subContextBuilder.getResult().checkNM());
             Thread.sleep(700);
