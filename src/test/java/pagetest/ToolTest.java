@@ -1,53 +1,53 @@
 package pagetest;
 
-import me.resources.Links;
-import org.junit.After;
-import org.junit.Test;
-import me.tool.DataManager;
-import me.tool.Search;
-import me.tool.Tools;
+import azenzus.page.Authorization;
+import azenzus.resources.Links;
+import azenzus.tool.DataManager;
+import azenzus.tool.Search;
+import azenzus.tool.Tools;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+import org.openqa.selenium.WebDriver;
 
-import java.util.ArrayList;
-import java.util.List;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class ToolTest {
+class ToolTest {
+    private static WebDriver driver;
+    private static Logger logger;
 
-    @Test
-    public void search(){
-
-        List<String> list = new ArrayList<>();
-        Search searchWindow = new Search();
-        for(String[] links : Links.searchLinks){
-            searchWindow.openList();
-            list.add(searchWindow.windowCheck(links));
-        }
-        System.out.println(list);
+    @BeforeAll
+    static void initialization(){
+        logger = LogManager.getLogger(ToolTest.class);
+        Authorization authorization = new Authorization();
+        driver = authorization.getDriver();
     }
-
     @Test
-    public void tools(){
-        List<String> list = new ArrayList<>();
-        Tools tools = new Tools();
+    void checkSearch(){
+        Search searchWindow = new Search(driver);
+        for(String[] links : Links.searchLinks) {
+            searchWindow.openList();
+            assertTrue(searchWindow.isDisplayed());
+            assertTrue(searchWindow.windowCheck(links));
+        }
+    }
+    @Test
+    void checkTools(){
+        Tools tools = new Tools(driver);
         for(String[] links : Links.toolLinks){
             tools.openList();
-            list.add(tools.windowCheck(links));
+            assertTrue(tools.isDisplayed());
+            assertTrue(tools.windowCheck(links));
         }
-        System.out.println(list);
     }
-
     @Test
-    public void data(){
-        List<String> list = new ArrayList<>();
-        DataManager data = new DataManager();
-
+    void checkDataManager(){
+        DataManager data = new DataManager(driver);
         for(String[] links : Links.dataManagerLinks){
             data.openList();
-            list.add(data.windowCheck(links));
+            assertTrue(data.isDisplayed());
+            assertTrue(data.windowCheck(links));
         }
-        System.out.print(list);
-    }
-    @After
-    public void shutDown(){
-        //driver.close();
     }
 }

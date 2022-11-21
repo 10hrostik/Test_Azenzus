@@ -1,40 +1,56 @@
 package pagetest;
 
-import me.resources.Links;
-import me.tree.Document;
-import me.tree.Function;
-import me.tree.Location;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import azenzus.page.Authorization;
+import azenzus.resources.Links;
+import azenzus.tree.*;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+import org.openqa.selenium.WebDriver;
 
-public class ContextMenuTest {
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-    @Test
-    public void function(){
-        Function fun = new Function();
-        fun.openPlant();
-        Boolean checked = fun.windowCheck(Links.contextMenu,Links.subContextMenu);
-        System.out.println("All function context menu buttons are correct? "+checked);
+
+class ContextMenuTest {
+    private static WebDriver driver;
+    private static Logger logger;
+    @BeforeAll
+    static void initialization(){
+        logger = LogManager.getLogger(ContextMenuTest.class);
+        Authorization authorization = new Authorization();
+        driver = authorization.getDriver();
+        PlantPreparation.openPlant(driver);
     }
     @Test
-    public void location(){
-        Location location = new Location();
-        location.openPlant();
-        Boolean checked = location.windowCheck(Links.contextMenu,Links.subContextMenu);
-        System.out.println("All location context menu buttons are correct? "+checked);
+    void checkFunction(){
+        Function fun = new Function(driver);
+        fun.openFunction();
+        Boolean checked = fun.windowCheck(Links.contextMenuFunction,Links.subContextMenuFun);
+        assertTrue(checked);
+        logger.log(Level.INFO,"All function context menu buttons are correct");
     }
-
     @Test
-    public void document(){
-        Document doc = new Document();
-        doc.openPlant();
-        Boolean checked = doc.windowCheck(Links.contextMenu,Links.subContextDocMenu);
-        System.out.println("All document context menu buttons are correct? "+checked);
+    void checkLocation(){
+        Location location = new Location(driver);
+        location.openLocation();
+        Boolean checked = location.windowCheck(Links.contextMenuLocation,Links.subContextMenuLoc);
+        assertTrue(checked);
+        logger.log(Level.INFO,"All location context menu buttons are correct");
     }
-
-    @After
-    public void shutDown(){
-        //driver.close();
+    @Test
+    void checkDocument(){
+        Document doc = new Document(driver);
+        doc.openDocument();
+        Boolean checked = doc.windowCheck(Links.contextMenuDocument,Links.subContextDocMenuDoc);
+        assertTrue(checked);
+        logger.log(Level.INFO,"All document context menu buttons are correct");
+    }
+    @Test
+    void checkTreeMenu() {
+        TreeMenu treeMenu = new TreeMenu(driver);
+        treeMenu.openFunction();
+        assertTrue(treeMenu.isDisplayed());
     }
 }
